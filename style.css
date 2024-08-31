@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+    --primary-color : #ff6b6b;
+    --secondary--color : #794afa; 
+    --secondary-dark-color : #453c5c ; 
+    --menu--color: #00368c;
+
+    --white-color: #ffffff;
+    --light-bg-color: #f2f3f5; 
+    --light-text-color :#7c899a; 
+    --border-color :#e5e8ec; 
+    --dark-color :#0a021c; 
+
+    --font-small:13px ; 
+    --font-smaller:11px ; 
+
+    --percent100: 100%; 
+    --percent50:50%; 
+
+    --fw3: 300; 
+    --fw5: 500;
+    --fw6: 600; 
+    --fw7: 700;
+    --fw8: 800; 
+
+    --trans-background-color: background-color .3s color .3s; 
+    --trans-background: backgound-color .3s; 
+    --trans-color :color .3s;
+
+
+
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px ;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+a {
+    text-decoration: none;
+    color: inherit; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul{
+    list-style: none;
+}
+img{
+    max-width: var(--percent100);
+    vertical-align: middle;
+}
+strong {
+    font-weight: var(--fw8);
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input::placeholder{
+    font: inherit;
+}
+
+
+h1,h2,h3,h4{
+    font-family: 'Poppins';
+}
+
+h1 {
+    font-size: calc(1.3em + 1vw);
+    font-weight: var(--fw8);
+    line-height: 1;
+}
+h2{
+    font-size: 2.5em;
+}
+
+h3{ 
+    font-size: 1.2em;
+    font-weight: var(--fw7);
+}
+h4{
+    font-size: 1em;
+    font-weight: var(--fw6);
+    margin-bottom: 1em;
+    
+}
+
+ 
+/* -------------------
+REUSEEABLE SELECTOR
+------------------- */
+
+.container{
+    max-width: 1288px;
+    margin: 0 auto;
+    padding : 0 0 .938em; 
+
+}
+
+.column{
+    margin-left: -0.938em;
+    margin-right: -.0938em;
+}
+.column .row{
+    padding : 0 0 .938em; 
+
+}
+
+
+.flexcenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexitem{
+    display: flex;
+    align-items: center;
+}
+.flexcol{
+    display: flex;
+    flex-direction: column;
+    gap:1em
+}
+
+
+.separator {
+    border-left: 1px solid rgb(74, 57, 57); /* Creates the vertical line */
+    height: 10px;
+    margin: 0 1px; 
+}
+/* ----------------------------------
+    *Structure Styling 
+    
+    00. Reeusable selectors 
+
+    01. Header
+
+        a. Header Top 
+        b. Header Nav 
+        c. Header Main , Departments Category
+        d. Search Form 
+        e. Responsive MENU -- Off Canvas 
+
+    02. SLIDER
+    03. BRANDS
+    04. PRODUCT 
+        a. Global product 
+        b. BIG product 
+        c. MINI product 
+        d. MAIN product 
+    05. BANNER 
+        a. News Letter 
+        b. Widgets 
+        c. Footer Info
+    06. BOTTOM MENU 
+        a.Seacrch 
+    07. OVERPLAY 
+    08. PAGE SINGLE 
+        a. Breadcrumb 
+        b. Product details 
+        c. Product description 
+        d. Product Review
+        e. Product Review Form 
+    09. PAGE SINGLE :SPECIAL OFFEER 
+    10. PAGE CATEGORY 
+        a. Sidebar products filter 
+        b. Products block
+    11. CART
+    12. PAGE CART
+    13. PAGE CHECKOUT
+    14. MOAL 
+    15. REESPONSIVE    
+    -----------------------------------
+    
+    */
+
+/* -------------------
+01. header
+------------------- */
+
+:where(.off-canvas, header) li > a {
+    display: flex ;
+    position: relative;
+    line-height: inherit;
+    transition : var(--trans-color);
+}
+
+    /* 01. header--------------
+    a. Header Top
+    -------------- ------------*/
+.header-top .wrapper{
+    font-size: var(--font-small);
+    font-weight: var(--fw3);
+    justify-content: space-between;
+    line-height: 42px ;
+    
+}
+
+.header-top .wrapper ul{
+    gap : 2em; 
+}
+.header-top li{
+    position: relative;
+}
+.header-top ul ul{
+    position: absolute;
+    left: -1em;
+    line-height: 2em;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    display: none;
+}
+
+
+    /* 01. header--------------
+    b. Header Nav 
+    -------------- ------------*/
+.header-nav{
+    padding:  0.5em 0 ;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #00368c;
+    color:var(--light-bg-color);
+}
+.left .logo img{
+    height: 110px;    
+}
+.left .content{
+    
+    padding-top: 15px;
+    margin-left: -15px;
+}
+.left .content h3{
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 5px;
+}
+.right .font h3{
+    font-family: 'Times New Roman', serif;
+    padding-left: 150px;
+    font-size: 1.5em;
+
+}
+
+
+
+
+    /* 01. header--------------
+    c. Header Menu , Departments Category
+    -------------- ------------*/
+.header-menu li a{
+    display: block;
+    padding : 0.5em 1.5em;
+}
+
+.header-menu li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Distance of the underline from the text */
+    width: 0;
+    height: 3px; /* Thickness of the underline */
+    background-color: var(--menu--color); /* Color of the underline */
+    transition: width 0.3s ease-in-out;
+}
+.header-menu li a:hover::after{
+    width: 100%;
+}
+.header-menu ul{
+    padding-left: 6em;
+}
+.header-menu li{
+    position: relative;
+}
+
+.header-menu ul.sub-menu{
+    position: absolute;
+    background-color: #eef3f9;
+    padding :0px 0px;
+    width: 200px;
+    display: none;
+    /* border-radius: 5px; */
+}
+.header-menu li:hover > ul.sub-menu{
+    display: block;
+    transition: var(--trans-background-color);
+}
+
+.header-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 2px solid #ffffff;
+    left: 0;
+}
+.header-menu ul.sub-menu li:hover a{
+    color :var(--light-bg-color);
+    background-color: var(--menu--color);
+    transition: 0.5s;
+}
+.header-menu ul.sub-menu li:last-child a{
+   border: none; 
+}
+
+.header-menu ul.sub-menu ul.sub-menu{
+    left : 201px;
+    top: 0.2px; 
+    
+}
+
+.header-menu ul.sub-menu ul.sub-menu li:hover > a {
+    background-color: initial; /* Keeps the original background color */
+    color: initial; /* Keeps the original text color */
+}
+
+
+
+
+
+
+
+/* -------------------
+09. PAGE SINGLE :SPECIAL OFFEER 
+------------------- */
+
+
+/* -------------------
+10. PAGE CATEGORY
+------------------- */
+
+
+
+    /* 10. PAGE CATEGORY--------------
+    a. Sidebar products filter
+    --------------------------*/
+
+
+/* -------------------
+12. PAGE CART 
+------------------- */
+
+
+/* -------------------
+13. PAGE CHECKOUT
+------------------- */
+
+/* -------------------
+14. MOAL 
+------------------- */
+
+/* -------------------
+15. REESPONSIVE 
+------------------- */
+@media screen and (min-width :481px ){
+   
+
+    
+    
+}
+@media screen and (min-width:639px ){
+  
+}
+
+@media screen and (min-width:768px ) {
+    
+    
+  
+}
+
+
+
+
+@media screen and (min-width:992px ){
+    
+    .container{
+        padding: 0 2em; 
+    }
+    
+    .logo a {
+        margin-right: 2em ;
+    }
+    .header-nav{
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+    
+   
+    
+   
+}
