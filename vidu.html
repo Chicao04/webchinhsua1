@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidu</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .a{
+            width: 500px ;
+            height: 200px;
+            background-color: antiquewhite;
+            align-items: center;
+            display: flex;
+            
+        }
+        .a div{ 
+            flex: 1; /* làm đầy 1 khung */
+        }
+        .a1{
+            min-height: 30px;
+            align-items: center;
+            background-color: red;
+        }
+        .a2{
+            min-height: 70px;
+            align-items: center;
+            background-color: blue;
+        }
+        .a3{
+            min-height: 130px;
+            align-items: center;
+            background-color: green;
+            display: flex;
+        }
+
+        /* .a2{
+            width: 50px ;
+            height: 50px ;
+        
+            background-color: red;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <h1>Ví dụ 1 : align-items</h1>
+    <div class="a">
+        <div class = "A a1">red</div>
+        <div class = "A a2">blue</div>
+        <div class = "A a3">green</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangki login form</title>
+    <link rel="stylesheet" href="./dangki.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="sign-up">
+            <form id="signupForm"> 
+                    <h1>Tạo tài khoản</h1>
+                    <div class="social-container">
+                        <a href="#" class = "social"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="#" class = "social"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class = "social"><i class='bx bxl-linkedin' ></i></a>
+                    </div>
+                    <p>hoặc là sử dụng email của bạn để đăng kí</p>
+                    <input type="text" id = "signupName" placeholder="Name" required >
+                    <input type="email" id = "signupEmail" placeholder="Email" required >
+                    <input type="password" id = "signupPassword" placeholder="Mật Khẩu" required>
+                    <button type="sumbit">Đăng kí</button>
+            </form>
+        </div>
+        <div class="sign-in">
+            <form id="loginForm"> 
+                    <h1>Đăng nhập</h1>
+                    <div class="social-container">
+                        <a href="#" class = "social"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="#" class = "social"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class = "social"><i class='bx bxl-linkedin' ></i></a>
+                    </div>
+                    <p>hoặc là sử dụng email</p>
+                    <input type="email" id = "loginEmail" name = "email" placeholder="Email" required ="">
+                    <input type="password" id = "loginPassword" name = "password" placeholder="Mật Khẩu" required ="">
+                    <a href="#">Quên mật khẩu</a>
+                    <button type="sumbit">Đăng Nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-left">
+                    <h1>Bạn trở lại</h1>
+                    <p>để duy trì kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button id = "signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-right">
+                    <h1>Chào mừng bạn</h1>
+                    <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+                    <button id = "signUp">Đăng kí</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const signUpButtom = document.getElementById('signUp')
+        const signInButtom = document.getElementById('signIn')
+        const main = document.getElementById('main')
+        signUpButtom.addEventListener('click',() => {
+            main.classList.add("right-panel-active");
+        });
+        signInButtom.addEventListener('click',() => {
+            main.classList.remove("right-panel-active");
+        });
+
+
+        // xử lý lưu thông tin đăng ký vào LocalStorge
+        const signupForm = document.getElementById('signupForm');
+        signupForm.addEventListener('submit' , (e) =>{
+            e.preventDefault();
+
+            const name = document.getElementById('signupName').value; 
+            const email = document.getElementById('signupEmail').value; 
+            const password = document.getElementById('signupPassword').value; 
+    
+            // Lưu thông tin người dùng vào LocalStorage 
+            const user = {name , email, password};
+            localStorage.setItem('user',JSON.stringify(user)); 
+    
+            alert('Đăng kí thành công! Thông tin đã được lưu')
+        });
+
+        // Xử lí đăng nhập bằng cách kiểm tra LocalStorage 
+        const loginForm = document.getElementById('loginForm'); 
+        loginForm.addEventListener('submit' , (e) =>  {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Lấy thông tin người dùng từ LocalStorage 
+            const storedUser = JSON.parse(localStorage.getItem('user')); 
+            
+            if(storedUser && storedUser.email === email && storedUser.password === password){
+                alert('Đăng nhập thành công')
+                window.location.href = 'index.html'; // Chuyển hướng đến trang index.html
+            }else {
+                alert('Đăng nhập không thành công')
+            }
+        });
+    </script>
+</body>
+</html>

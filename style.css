@@ -124,7 +124,7 @@ REUSEEABLE SELECTOR
 .flexcenter{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /*giá trị này sẽ căn giữa các thành phần trong flexbox*/
 }
 .flexitem{
     display: flex;
@@ -327,6 +327,22 @@ REUSEEABLE SELECTOR
 
 
 
+
+/*--------------------
+-------main-----------
+----------------------*/
+
+
+/*---------------------
+----- 2 SLider -------
+--------------------*/
+.slider { 
+    margin-top: 30px;
+}
+.slider .item {
+    position: relative;
+    height: 474px ;
+} 
 
 
 
